@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nibbles</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <canvas
+      id="canvas-box"
+      width="320"
+      height="320"
+      style="background-color: black"
+    ></canvas>
+    <div id="info">
+      <p id="current-score">Current:</p>
+      <p id="best-score">Best:</p>
+      <button type="button" id="btn-init" onclick="location.reload()">
+        New Game
+      </button>
+      <button type="button" id="btn-start" onclick="mainGame.start()">
+        Start
+      </button>
+    </div>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
