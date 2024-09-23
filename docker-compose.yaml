@@ -1,0 +1,35 @@
+services:
+  app:
+    container_name: web-snake
+    image: node:20-alpine
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # ports:
+    # - '5504:5504'
+    networks:
+      - service-network
+    expose:
+      - '5504'
+    volumes:
+      - ./:/deploy
+    environment:
+      - TZ=Asia/Taipei
+    working_dir: /deploy
+    command:
+      - /bin/sh
+      - -c
+      - |
+        apk add tzdata
+        apk add nano
+        cd /deploy
+        npm install nodemon
+        npm install
+        npm start
+    # command: ["npm", "start"]
+
+networks:
+  service-network:
+    name: service-network
+    driver: bridge
+    external: true
